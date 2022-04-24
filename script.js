@@ -1,7 +1,8 @@
 const express = require('express')
 const Datastore = require('nedb')
 const app = express()
-app.listen(3000, () => console.log("This is hosted in local server"))
+const port = process.env.PORT
+app.listen(port, () => console.log("This is hosted in local server"))
 app.use(express.static('public'))
 app.use(express.json({ limit: '1mb' }))
 
